@@ -1,6 +1,6 @@
 /* Feminine, soft, mystical: blush + rose + plum + gold. Arches (doorways home), rings (sound), waves (breath). */
 :root{--bg:#fcf4ef;--blush:#f6e1da;--peach:#f3d3c3;--rose:#d79a9d;--rose-d:#b0626f;--plum:#432634;--mauve:#7d5566;--gold:#c2a062;--sage:#a8b69b;--ink:#4a3540;--line:#ecd5cc;
- --serif:Bellefair,"Frank Ruhl Libre",serif;--hand:"Amatic SC",cursive;--sans:Assistant,Heebo,system-ui,sans-serif}
+ --serif:"Frank Ruhl Libre",Bellefair,serif;--hand:"Amatic SC",cursive;--sans:Assistant,Heebo,system-ui,sans-serif}
 /* exactly four text sizes site-wide */
 :root{--t1:clamp(3.2rem,8vw,5.6rem);--t2:clamp(2.3rem,5vw,3.2rem);--t3:clamp(1.55rem,3vw,1.9rem);--t4:1.3rem}
 *{box-sizing:border-box;margin:0}
@@ -150,3 +150,16 @@ body:not(.home) main{padding-top:100px}
 .intro{padding:40px 0 90px;background:radial-gradient(ellipse 70% 48% at 50% 52%,rgba(243,211,195,.65),rgba(243,211,195,0) 100%)}
 .intro .cta{justify-content:center}.intro .lead{margin-bottom:1em}
 @media(max-width:1080px){:root{--hdr-h:100px}.vslot{height:clamp(480px,82svh,760px)}.intro{padding:28px 0 64px}}
+/* gates: big, bold titles. Two columns on desktop, image beside text */
+.card h3{font-family:var(--sans);font-weight:600;font-size:var(--t2);line-height:1.1;margin:0 0 .25em;color:var(--plum)}
+.card p{color:var(--ink);margin-bottom:.4em}
+.grid4{grid-template-columns:1fr 1fr;gap:48px 40px}
+.card{display:grid;grid-template-columns:.85fr 1fr;gap:28px;align-items:center;text-align:start}
+.card:hover{transform:translateY(-6px)}
+@media(max-width:860px){.grid4{grid-template-columns:1fr;gap:56px}.card{grid-template-columns:1fr;text-align:center;gap:0}.card .slot{max-width:320px;margin:0 auto;width:100%}.card h3{margin-top:.7em}}
+
+.card{grid-template-rows:auto auto auto;align-content:center;row-gap:6px}
+.card .slot{grid-row:1 / span 3;grid-column:1}
+.card h3,.card p,.card .more{grid-column:2}
+.card h3{align-self:end}.card .more{align-self:start;margin-top:.3em}
+@media(max-width:860px){.card .slot{grid-row:auto;grid-column:auto}.card h3,.card p,.card .more{grid-column:auto}.card h3,.card p,.card .more{align-self:auto}.card{row-gap:0}}
