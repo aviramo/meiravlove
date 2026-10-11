@@ -1,11 +1,19 @@
 // Menu: mobile sheet blooms from the burger button; desktop dropdown opens under its button
 const nav = document.querySelector('.nav'), burger = document.querySelector('.burger');
+// The sheet blooms from the burger. Keep the origin current at all times (not only on click),
+// otherwise the very first open animates from the CSS fallback position.
+function placeOrigin() {
+  const r = burger.getBoundingClientRect();
+  if (!r.width) return;
+  nav.style.setProperty('--ox', (r.left + r.width / 2) + 'px');
+  nav.style.setProperty('--oy', (r.top + r.height / 2) + 'px');
+}
+placeOrigin();
+addEventListener('resize', placeOrigin);
+addEventListener('load', placeOrigin);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeOrigin);
 function setMenu(open) {
-  if (open) {
-    const r = burger.getBoundingClientRect();
-    nav.style.setProperty('--ox', (r.left + r.width / 2) + 'px');
-    nav.style.setProperty('--oy', (r.top + r.height / 2) + 'px');
-  }
+  if (open) placeOrigin();
   nav.classList.toggle('open', open);
   burger.setAttribute('aria-expanded', open);
   document.body.style.overflow = open ? 'hidden' : '';
@@ -94,6 +102,7 @@ let ticking = false;
 function updateHeader() {
   const p = Math.min(Math.max(scrollY / 220, 0), 1);
   document.documentElement.style.setProperty('--p', p.toFixed(3));
+  placeOrigin();
   ticking = false;
 }
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(updateHeader); } }, { passive: true });
