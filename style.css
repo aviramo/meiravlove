@@ -48,7 +48,7 @@ p{margin-bottom:1em}a{color:var(--rose-d)}
 /* image slots */
 .slot{position:relative;aspect-ratio:var(--ratio,4/3);border-radius:var(--blob);overflow:hidden;background:linear-gradient(160deg,var(--blush),var(--peach) 70%,#efc6bd)}
 .slot-ph{position:absolute;inset:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:14px;border:1px dashed rgba(176,98,111,.55);border-radius:inherit;color:var(--plum)}
-.slot-ph b{font-weight:600;font-size:var(--t4)}.slot-ph small{direction:ltr;font-size:var(--t4);color:var(--mauve)}.slot-ico{font-size:1.7rem;color:var(--rose-d)}
+.slot-ph b{font-weight:600;font-size:var(--t4)}.slot-ph small{direction:ltr;font-size:var(--t4);color:var(--mauve)}.slot-ico{font-size:var(--t3);color:var(--rose-d)}
 .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* varied organic shapes: egg, petal, blob, capsule, circle; never the same silhouette twice in a row */
 :root{--egg:50% 50% 50% 50%/62% 62% 38% 38%;--petal:50% 6% 50% 6%/46% 6% 46% 6%;--petal2:6% 50% 6% 50%/6% 46% 6% 46%;--blob:58% 42% 47% 53%/52% 56% 44% 48%;--blob2:41% 59% 55% 45%/47% 42% 58% 53%;--capsule:999px}
@@ -146,7 +146,7 @@ body:not(.home) main{padding-top:100px}
 .vslot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vslot::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(67,38,52,.18),transparent 28%,transparent 70%,rgba(67,38,52,.14))}
 .vhero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:56px;z-index:1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 56' preserveAspectRatio='none'%3E%3Cpath d='M0 56h1200V30C1000 -6 800 60 600 28S200 -2 0 34z' fill='%23fcf4ef'/%3E%3C/svg%3E") center/100% 100% no-repeat}
-.vsound{position:absolute;z-index:2;bottom:78px;left:22px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(252,244,239,.85);backdrop-filter:blur(8px);font-size:1.15rem;cursor:pointer;transition:transform .25s}.vsound:hover{transform:scale(1.08)}
+.vsound{position:absolute;z-index:2;bottom:78px;left:22px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(252,244,239,.85);backdrop-filter:blur(8px);font-size:var(--t4);cursor:pointer;transition:transform .25s}.vsound:hover{transform:scale(1.08)}
 .intro{padding:40px 0 90px;background:radial-gradient(ellipse 70% 48% at 50% 52%,rgba(243,211,195,.65),rgba(243,211,195,0) 100%)}
 .intro .cta{justify-content:center}.intro .lead{margin-bottom:1em}
 @media(max-width:1080px){:root{--hdr-h:100px}.vslot{height:clamp(480px,82svh,760px)}.intro{padding:28px 0 64px}}
@@ -170,3 +170,26 @@ body:not(.home) main{padding-top:100px}
 p:has(>.btn){text-align:center}
 .form .btn{justify-self:center}
 @media(max-width:860px){.hero-txt{text-align:center}}
+
+/* tighter top of inner pages, contact form polish */
+body:not(.home) main{padding-top:84px}
+.page-hd{padding:20px 0 8px}
+.page-hd + .sec{padding-top:36px}
+.page-hd .lead{margin-bottom:0}
+.form .chk{display:flex;align-items:flex-start;gap:12px;line-height:1.6;font-size:var(--t4)}
+.form .chk input{flex:none;width:24px;height:24px;margin-top:4px;accent-color:var(--rose-d)}
+.form textarea{min-height:9em;resize:vertical}
+@media(max-width:860px){.two>.slot,.two>div>.slot{order:2}.page-hd + .sec .two{gap:32px}}
+
+/* one footer, identical on every page */
+.ftr{text-align:start;padding:72px 0 28px}
+.ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.ftr nav{display:flex;flex-direction:column;gap:6px}
+.ftr h4{font-family:var(--sans);font-weight:600;font-size:var(--t4);color:#fff;margin:0 0 .4em}
+.ftr a{text-decoration:none;color:#e9cfd0;transition:color .25s}.ftr a:hover{color:var(--gold)}
+.ftr-t{margin-bottom:.2em}
+.ftr-soc{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.1em}
+.ftr-soc a{padding:6px 18px;border-radius:999px;border:1px solid rgba(233,207,208,.45)}.ftr-soc a:hover{border-color:var(--gold)}
+.ftr-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(233,207,208,.22);color:#c9a9ae}
+@media(max-width:860px){.ftr{padding:56px 0 24px}.ftr-grid{grid-template-columns:1fr 1fr;gap:36px 24px}.ftr-brand{grid-column:1 / -1;text-align:center}.ftr-soc{justify-content:center}.ftr-bot{justify-content:center;text-align:center}}
+.page-hd{padding-top:44px}
