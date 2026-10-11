@@ -220,3 +220,21 @@ html.pt-in::after{animation:ptreveal .85s cubic-bezier(.7,0,.2,1) .06s both}
 .hero-txt .kicker{position:absolute;left:0;right:0;bottom:100%;margin:0 0 8px}
 @media(max-width:860px){.page-hd{padding-top:64px}.hero:not(.big){padding-top:64px}}
 .page-hd{padding-top:90px}@media(max-width:860px){.page-hd{padding-top:66px}}
+
+/* title clearance below the floating header, on every inner page */
+.page-hd{padding-top:112px}.hero:not(.big){padding-top:110px}
+@media(max-width:860px){.page-hd{padding-top:94px}.hero:not(.big){padding-top:92px}}
+[id]{scroll-margin-top:130px}
+.ftr-contact{margin-top:1.1em;line-height:1.9}
+/* press feedback instead of the browser's blue tap box */
+html{-webkit-tap-highlight-color:transparent}
+a,button,summary,.pill{-webkit-tap-highlight-color:transparent}
+:focus:not(:focus-visible){outline:none}
+.btn,.pill,.burger,.card,.ftr-soc a,.nav>a,.dd>button,.dd-menu a,.logo,summary{transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .3s,color .3s,opacity .35s}
+.btn:active,.pill:active,.ftr-soc a:active{transform:scale(.94);filter:brightness(.96)}
+.burger:active{transform:scale(.88)}
+.card:active{transform:scale(.97)}
+.logo:active{transform:scale(.96)}
+.nav>a:active,.dd>button:active,.dd-menu a:active{transform:scale(.95)}
+.ftr a:active{color:var(--gold)}
+summary:active{color:var(--rose-d)}
