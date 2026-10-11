@@ -76,20 +76,14 @@ if (form) form.addEventListener('submit', e => {
   e.preventDefault();
   form.querySelector('.form-msg').textContent = 'תודה! (הטופס עדיין לא מחובר לשליחה. יש לחבר שירות טפסים לפני העלייה לאוויר.)';
 });
-// Ambient video: show sound toggle only when a video actually loads
-const vid = document.querySelector('.vslot video'), vbtn = document.querySelector('.vsound');
-if (vid && vbtn) {
+// Ambient video: silent, seamless loop (landscape triptych on wide screens, portrait cut on phones)
+const vid = document.querySelector('.vslot video');
+if (vid) {
   // autoplay (muted is allowed everywhere); retry on first touch if the browser blocked it
   const tryPlay = () => vid.play().catch(() => {});
   tryPlay();
   ['click','touchstart','scroll'].forEach(ev => addEventListener(ev, tryPlay, { once: true, passive: true }));
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
-  vid.addEventListener('loadeddata', () => { vbtn.hidden = false; });
-  vbtn.addEventListener('click', () => {
-    vid.muted = !vid.muted;
-    vbtn.textContent = vid.muted ? '🔇' : '🔊';
-    vbtn.setAttribute('aria-label', vid.muted ? 'הפעלת צליל' : 'השתקה');
-  });
 }
 // Header shrinks smoothly with scroll position (--p goes 0 -> 1 over the first 220px)
 let ticking = false;
