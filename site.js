@@ -51,3 +51,12 @@ if (vid && vbtn) {
     vbtn.setAttribute('aria-label', vid.muted ? 'הפעלת צליל' : 'השתקה');
   });
 }
+// Header shrinks smoothly with scroll position (--p goes 0 -> 1 over the first 220px)
+let ticking = false;
+function updateHeader() {
+  const p = Math.min(Math.max(scrollY / 220, 0), 1);
+  document.documentElement.style.setProperty('--p', p.toFixed(3));
+  ticking = false;
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(updateHeader); } }, { passive: true });
+updateHeader();
