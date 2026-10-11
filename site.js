@@ -84,6 +84,10 @@ if (vid) {
   tryPlay();
   ['click','touchstart','scroll'].forEach(ev => addEventListener(ev, tryPlay, { once: true, passive: true }));
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+  // the poster image sits behind with identical framing; fade the video in once it is really playing
+  const show = () => vid.classList.add('on');
+  vid.addEventListener('playing', show, { once: true });
+  if (!vid.paused && vid.readyState > 2) show();
 }
 // Header shrinks smoothly with scroll position (--p goes 0 -> 1 over the first 220px)
 let ticking = false;

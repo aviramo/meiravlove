@@ -105,8 +105,9 @@ gates = [("kol-hanshama.html","קול הנשמה","מרחב של צלילים מ
 cards = "".join(f'<a class="card" href="{h}">{slot(img, lab, "4/5")}<h3>{n}</h3><p>{d}</p><span class="more">להיכנס למרחב ←</span></a>' for h,n,d,img,lab in gates)
 pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפוי, חיבור והיזכרות בתדר של אהבה. הבית הדיגיטלי של מירב מאור.", "index.html", f'''
 <section class="vhero">
-<figure class="vslot"><div class="slot-ph"><span class="slot-ico">▶</span><b>סרטון אווירה (מירב, צלילים, טבע)</b><small>images/hero-video.mp4 · poster: images/hero-poster.jpg</small></div>
-<video autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true"><source src="images/hero-video.mp4" type="video/mp4" media="(min-width: 768px), (orientation: landscape)"><source src="images/hero-video-mobile.mp4" type="video/mp4" onerror="this.closest('video').remove()"></video></figure>
+<figure class="vslot">
+<video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="images/hero-video.mp4" type="video/mp4" media="(min-width: 768px), (orientation: landscape)"><source src="images/hero-video-mobile.mp4" type="video/mp4" onerror="this.closest('video').remove()"></video>
+<noscript><style>.vslot video{{opacity:1}}</style></noscript></figure>
 </section>
 <section class="intro"><div class="wrap narrow c"><p class="kicker">ברוכים הבאים הביתה</p>
 <h1>מירב מאור</h1>
