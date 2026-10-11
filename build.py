@@ -43,13 +43,13 @@ def page(fn, title, desc, body, active):
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="images/og-share.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@400;500&family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@400;500&family=Amatic+SC:wght@400;700&family=Gveret+Levin&family=Assistant:wght@300;400;600&display=swap">
 <script>try{{var p=sessionStorage.getItem('pt');if(p){{sessionStorage.removeItem('pt');var a=p.split(',');var d=document.documentElement;d.classList.add('pt-in');d.style.setProperty('--px',a[0]+'px');d.style.setProperty('--py',a[1]+'px')}}}}catch(e){{}}</script>
 <link rel="stylesheet" href="style.css?v={VER}">
 </head>
 <body class="{'home' if fn=='index.html' else ''}">
 <header class="hdr"><div class="wrap hdr-in">
-<a class="logo" href="index.html"><i class="logo-ring"></i><span>מירב מאור<small>אהבה זה כל הסיפור ♡</small></span></a>
+<a class="logo" href="index.html"><i class="logo-ring"></i><span><b class="logo-name">מירב מאור</b><small>אהבה זה כל הסיפור ♡</small></span></a>
 <button class="burger" aria-label="תפריט" aria-expanded="false"><span></span><span></span><span></span></button>
 <nav class="nav">{nav}</nav>
 </div></header>
