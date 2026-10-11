@@ -163,3 +163,10 @@ body:not(.home) main{padding-top:100px}
 .card h3,.card p,.card .more{grid-column:2}
 .card h3{align-self:end}.card .more{align-self:start;margin-top:.3em}
 @media(max-width:860px){.card .slot{grid-row:auto;grid-column:auto}.card h3,.card p,.card .more{grid-column:auto}.card h3,.card p,.card .more{align-self:auto}.card{row-gap:0}}
+/* buttons are always horizontally centered in their block, on every page */
+.cta{justify-content:center}
+.hero-txt{text-align:center}.hero-txt p{margin-inline:auto}
+.card,.ev{text-align:center}
+p:has(>.btn){text-align:center}
+.form .btn{justify-self:center}
+@media(max-width:860px){.hero-txt{text-align:center}}
