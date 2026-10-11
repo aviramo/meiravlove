@@ -193,3 +193,9 @@ body:not(.home) main{padding-top:84px}
 .ftr-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(233,207,208,.22);color:#c9a9ae}
 @media(max-width:860px){.ftr{padding:56px 0 24px}.ftr-grid{grid-template-columns:1fr 1fr;gap:36px 24px}.ftr-brand{grid-column:1 / -1;text-align:center}.ftr-soc{justify-content:center}.ftr-bot{justify-content:center;text-align:center}}
 .page-hd{padding-top:44px}
+/* inner page titles: more air above, tighter to the content below */
+.page-hd{padding:76px 0 0}
+.page-hd + .sec{padding-top:8px}
+.page-hd .lead{margin:0 0 .2em}
+@media(max-width:860px){.page-hd{padding-top:64px}}
+.page-hd + .sec .pills{margin-top:28px}
