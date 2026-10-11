@@ -113,7 +113,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
  body{font-size:var(--t4)}.hero-in,.two,.grid3{grid-template-columns:1fr;gap:40px}.grid4{grid-template-columns:1fr 1fr}
  .halo{max-width:340px}.sec{padding:60px 0}.sec.alt{padding:84px 0}.hero.big{padding:56px 0 70px}
  .hdr-in{height:calc(92px - var(--p,0)*28px);padding:0 14px 0 20px}.logo-ring{width:38px;height:38px}.logo{gap:10px}
- .burger{display:block}
+ .burger{display:block;order:-1;background:none;border:0;box-shadow:none}
+ .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(calc(1 - var(--p,0)*.25));transform-origin:center;text-align:center}
+ .logo span{align-items:center}
+ .burger[aria-expanded=true]{background:none}
  .nav{position:fixed;inset:0;z-index:60;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:90px 24px 40px;overflow-y:auto;
   background:radial-gradient(circle at 20% 15%,rgba(215,154,157,.35),transparent 55%),var(--plum);
   clip-path:circle(0px at var(--ox,40px) var(--oy,40px));visibility:hidden;transition:clip-path .8s cubic-bezier(.7,0,.2,1),visibility 0s .8s}
