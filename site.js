@@ -1,3 +1,21 @@
+// Opening the site from a link must land at the top (no hash). Some browsers restore an old scroll position,
+// and with smooth scrolling on <html> that shows up as the page "scrolling down by itself".
+// Pin to the top until the visitor first interacts (or 2s pass). Back/forward and reload keep their position.
+(function () {
+  const nav0 = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  if (location.hash || (nav0 && nav0.type !== 'navigate')) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const root = document.documentElement;
+  let pinned = true;
+  const top = () => { if (pinned && scrollY > 0) { root.style.scrollBehavior = 'auto'; scrollTo(0, 0); } };
+  const release = () => { pinned = false; root.style.scrollBehavior = ''; };
+  top();
+  addEventListener('scroll', top, { passive: true });
+  addEventListener('load', top);
+  addEventListener('pageshow', top);
+  ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(ev => addEventListener(ev, release, { once: true, passive: true }));
+  setTimeout(release, 2000);
+})();
 // Menu: mobile sheet blooms from the burger button; desktop dropdown opens under its button
 const nav = document.querySelector('.nav'), burger = document.querySelector('.burger');
 // The sheet blooms from the burger. Keep the origin current at all times (not only on click),
