@@ -212,3 +212,11 @@ body:not(.home) main{padding-top:84px}
 html.pt-in::after{animation:ptreveal .85s cubic-bezier(.7,0,.2,1) .06s both}
 @keyframes ptreveal{from{clip-path:circle(150vmax at var(--px,50%) var(--py,50%))}to{clip-path:circle(0 at var(--px,50%) var(--py,50%))}}
 @media(prefers-reduced-motion:reduce){html.pt-in::after,.ptcurtain{display:none}}
+/* every inner page: the h1 starts at exactly the same height (kicker hangs above it) */
+.page-hd{padding-top:88px}
+.hero:not(.big){padding-top:88px}
+.hero-in{align-items:start}
+.hero-txt{position:relative}
+.hero-txt .kicker{position:absolute;left:0;right:0;bottom:100%;margin:0 0 8px}
+@media(max-width:860px){.page-hd{padding-top:64px}.hero:not(.big){padding-top:64px}}
+.page-hd{padding-top:90px}@media(max-width:860px){.page-hd{padding-top:66px}}
