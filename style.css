@@ -134,3 +134,13 @@ h2.c::after{content:"";display:block;width:120px;height:14px;margin:.45em auto 0
 .halo{animation:rise 1.1s .15s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.hero-txt>*,.halo{animation:none}.nav,.nav.open,.nav>a,.dd-menu{transition:none!important}}
+/* home opening: ambient video first, text starts beneath it */
+.vhero{padding:22px 0 0}
+.vslot{position:relative;margin:0;aspect-ratio:21/9;max-height:78vh;border-radius:48px 48px 48px 160px;overflow:hidden;background:linear-gradient(160deg,var(--blush),var(--peach) 70%,#efc6bd);box-shadow:0 30px 70px rgba(176,98,111,.22);animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.vslot .slot-ph{inset:12px;border-radius:38px 38px 38px 150px}
+.vslot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vslot::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),inset 0 -90px 90px -60px rgba(67,38,52,.25)}
+.vsound{position:absolute;z-index:2;bottom:18px;left:18px;width:46px;height:46px;border:0;border-radius:50%;background:rgba(252,244,239,.85);backdrop-filter:blur(8px);font-size:1.15rem;cursor:pointer;transition:transform .25s}.vsound:hover{transform:scale(1.08)}
+.intro{padding:64px 0 90px;background:radial-gradient(45% 60% at 50% 0,var(--peach),transparent 75%)}
+.intro .cta{justify-content:center}.intro .lead{margin-bottom:1em}
+@media(max-width:860px){.vslot{aspect-ratio:4/5;max-height:70vh;border-radius:36px 36px 36px 110px}.vslot .slot-ph{border-radius:28px 28px 28px 100px}.intro{padding:44px 0 64px}}

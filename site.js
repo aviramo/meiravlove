@@ -36,3 +36,13 @@ if (form) form.addEventListener('submit', e => {
   e.preventDefault();
   form.querySelector('.form-msg').textContent = 'תודה! (הטופס עדיין לא מחובר לשליחה. יש לחבר שירות טפסים לפני העלייה לאוויר.)';
 });
+// Ambient video: show sound toggle only when a video actually loads
+const vid = document.querySelector('.vslot video'), vbtn = document.querySelector('.vsound');
+if (vid && vbtn) {
+  vid.addEventListener('loadeddata', () => { vbtn.hidden = false; });
+  vbtn.addEventListener('click', () => {
+    vid.muted = !vid.muted;
+    vbtn.textContent = vid.muted ? '🔇' : '🔊';
+    vbtn.setAttribute('aria-label', vid.muted ? 'הפעלת צליל' : 'השתקה');
+  });
+}
