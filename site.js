@@ -39,6 +39,11 @@ if (form) form.addEventListener('submit', e => {
 // Ambient video: show sound toggle only when a video actually loads
 const vid = document.querySelector('.vslot video'), vbtn = document.querySelector('.vsound');
 if (vid && vbtn) {
+  // autoplay (muted is allowed everywhere); retry on first touch if the browser blocked it
+  const tryPlay = () => vid.play().catch(() => {});
+  tryPlay();
+  ['click','touchstart','scroll'].forEach(ev => addEventListener(ev, tryPlay, { once: true, passive: true }));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
   vid.addEventListener('loadeddata', () => { vbtn.hidden = false; });
   vbtn.addEventListener('click', () => {
     vid.muted = !vid.muted;
