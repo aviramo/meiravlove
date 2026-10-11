@@ -53,3 +53,4 @@ details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointe
 }
 @media(max-width:520px){.grid4{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{direction:rtl}
