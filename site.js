@@ -11,7 +11,16 @@ function setMenu(open) {
   document.body.style.overflow = open ? 'hidden' : '';
 }
 burger.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+// Choosing a link in the mobile sheet: play the closing animation first, then navigate
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
+  if (!nav.classList.contains('open')) return;
+  const href = a.getAttribute('href');
+  if (!href || href === '#' || e.metaKey || e.ctrlKey) { setMenu(false); return; }
+  e.preventDefault();
+  setMenu(false);
+  setTimeout(() => { location.href = href; }, reduceMotion ? 0 : 650);
+}));
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   setMenu(false);
