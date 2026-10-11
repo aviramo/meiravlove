@@ -11,16 +11,47 @@ function setMenu(open) {
   document.body.style.overflow = open ? 'hidden' : '';
 }
 burger.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
-// Choosing a link in the mobile sheet: play the closing animation first, then navigate
+// Page transitions: a plum circle blooms from the click point, the next page reveals by shrinking it back
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
-  if (!nav.classList.contains('open')) return;
-  const href = a.getAttribute('href');
-  if (!href || href === '#' || e.metaKey || e.ctrlKey) { setMenu(false); return; }
+function leave(href, x, y, withCurtain) {
+  try { sessionStorage.setItem('pt', Math.round(x) + ',' + Math.round(y)); } catch (e) {}
+  if (reduceMotion) { location.href = href; return; }
+  if (withCurtain) {
+    const c = document.createElement('div');
+    c.className = 'ptcurtain';
+    c.style.setProperty('--px', x + 'px');
+    c.style.setProperty('--py', y + 'px');
+    document.body.appendChild(c);
+    requestAnimationFrame(() => requestAnimationFrame(() => c.classList.add('on')));
+  }
+  setTimeout(() => { location.href = href; }, withCurtain ? 520 : 220);
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href]');
+  if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || a.target === '_blank' || a.hasAttribute('download')) return;
+  const raw = a.getAttribute('href');
+  if (!raw || raw === '#') return;
+  const u = new URL(a.href, location.href);
+  if (u.origin !== location.origin) return;
+  const menuOpen = nav.classList.contains('open');
+  if (u.pathname === location.pathname && u.hash) {
+    if (menuOpen) { e.preventDefault(); setMenu(false); setTimeout(() => { location.hash = u.hash; }, 650); }
+    return;
+  }
   e.preventDefault();
+  let x = e.clientX, y = e.clientY;
+  if (menuOpen || !e.detail) {
+    const r = (menuOpen ? burger : a).getBoundingClientRect();
+    x = r.left + r.width / 2; y = r.top + r.height / 2;
+  }
+  // with the mobile sheet open, it already covers the screen: keep it, the next page shrinks it toward the burger
+  leave(u.href, x, y, !menuOpen);
+});
+addEventListener('pageshow', e => {
+  if (!e.persisted) return;
+  document.querySelectorAll('.ptcurtain').forEach(c => c.remove());
   setMenu(false);
-  setTimeout(() => { location.href = href; }, reduceMotion ? 0 : 650);
-}));
+});
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   setMenu(false);

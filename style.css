@@ -204,3 +204,11 @@ body:not(.home) main{padding-top:84px}
 .page-hd + .sec .pills{margin-top:28px}
 
 @media(min-width:1081px){.dd-menu a.cur{color:var(--rose-d);background:rgba(246,225,218,.7)}}
+
+/* page transition curtain (same look as the mobile menu sheet) */
+.ptcurtain,html.pt-in::after{content:"";position:fixed;inset:0;z-index:999;pointer-events:none;background:radial-gradient(circle at 20% 15%,rgba(215,154,157,.35),transparent 55%),var(--plum)}
+.ptcurtain{clip-path:circle(0 at var(--px,50%) var(--py,50%));transition:clip-path .52s cubic-bezier(.7,0,.2,1)}
+.ptcurtain.on{clip-path:circle(150vmax at var(--px,50%) var(--py,50%))}
+html.pt-in::after{animation:ptreveal .85s cubic-bezier(.7,0,.2,1) .06s both}
+@keyframes ptreveal{from{clip-path:circle(150vmax at var(--px,50%) var(--py,50%))}to{clip-path:circle(0 at var(--px,50%) var(--py,50%))}}
+@media(prefers-reduced-motion:reduce){html.pt-in::after,.ptcurtain{display:none}}
