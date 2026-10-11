@@ -246,3 +246,6 @@ a,button,summary,.pill{-webkit-tap-highlight-color:transparent}
 .nav>a:active,.dd>button:active,.dd-menu a:active{transform:scale(.95)}
 .ftr a:active{color:var(--gold)}
 summary:active{color:var(--rose-d)}
+
+/* phones: the logo is centred with translate(-50%,-50%); the press effect must keep that translate */
+@media(max-width:1080px){.logo:active{transform:translate(-50%,-50%) scale(calc((1 - var(--p,0)*.25)*.96))}}
