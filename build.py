@@ -49,7 +49,7 @@ def page(fn, title, desc, body, active):
 </head>
 <body class="{'home' if fn=='index.html' else ''}">
 <header class="hdr"><div class="wrap hdr-in">
-<a class="logo" href="index.html"><i class="logo-ring"></i><span><b class="logo-name">מירב מאור</b><small>אהבה זה כל הסיפור ♡</small></span></a>
+<a class="logo" href="index.html"><i class="logo-ring"></i><span><b class="logo-name">מירב מאור</b><small>אהבה זה כל הסיפור<svg class="logo-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12.2 20.4C7 16.3 2.4 12.6 2.2 8.1 2.1 4.9 4.5 2.4 7.4 2.5c1.9.1 3.5 1.2 4.6 3 1.2-1.9 3-3 4.9-2.9 3 .1 5.2 2.7 5 5.8-.3 4.6-4.9 8.1-9.7 12z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></small></span></a>
 <button class="burger" aria-label="תפריט" aria-expanded="false"><span></span><span></span><span></span></button>
 <nav class="nav">{nav}</nav>
 </div></header>
