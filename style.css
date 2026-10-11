@@ -44,17 +44,23 @@ p{margin-bottom:1em}a{color:var(--rose-d)}
 .burger[aria-expanded=true] span:nth-child(2){opacity:0;transform:scaleX(0)}
 .burger[aria-expanded=true] span:nth-child(3){top:22px;transform:rotate(-45deg)}
 /* image slots */
-.slot{position:relative;aspect-ratio:var(--ratio,4/3);border-radius:28px;overflow:hidden;background:linear-gradient(160deg,var(--blush),var(--peach) 70%,#efc6bd)}
+.slot{position:relative;aspect-ratio:var(--ratio,4/3);border-radius:var(--blob);overflow:hidden;background:linear-gradient(160deg,var(--blush),var(--peach) 70%,#efc6bd)}
 .slot-ph{position:absolute;inset:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:14px;border:1px dashed rgba(176,98,111,.55);border-radius:inherit;color:var(--plum)}
 .slot-ph b{font-weight:600;font-size:.95rem}.slot-ph small{direction:ltr;font-size:.7rem;color:var(--mauve)}.slot-ico{font-size:1.7rem;color:var(--rose-d)}
 .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-/* arch (doorway home) for portraits; soft oval for landscape */
-.hero-fig,.card .slot,.two .slot[style*="4/5"],.stack .slot[style*="4/5"]{border-radius:999px 999px 28px 28px}
-.two .slot[style*="4/3"],.stack .slot[style*="4/3"]{border-radius:50% 50% 50% 50%/60% 60% 40% 40%}
-.grid3 .slot[style*="1/1"]{border-radius:50%}
-.ev .slot{border-radius:22px 22px 70px 22px}
+/* varied organic shapes: egg, petal, blob, capsule, circle; never the same silhouette twice in a row */
+:root{--egg:50% 50% 50% 50%/62% 62% 38% 38%;--petal:50% 6% 50% 6%/46% 6% 46% 6%;--petal2:6% 50% 6% 50%/6% 46% 6% 46%;--blob:58% 42% 47% 53%/52% 56% 44% 48%;--blob2:41% 59% 55% 45%/47% 42% 58% 53%;--capsule:999px}
+.hero-fig{border-radius:var(--egg)}
+.card:nth-child(1) .slot{border-radius:var(--egg)}.card:nth-child(2) .slot{border-radius:var(--petal)}
+.card:nth-child(3) .slot{border-radius:var(--blob)}.card:nth-child(4) .slot{border-radius:var(--capsule)}
+.sec .two>.slot,.sec .two>.stack>.slot{border-radius:var(--blob)}
+.sec:nth-of-type(even) .two>.slot{border-radius:var(--petal2)}
+.stack .slot:nth-child(1){border-radius:var(--egg)}.stack .slot:nth-child(2){border-radius:var(--blob2)}
+.grid3 .slot[style*="1/1"]{border-radius:50%}.grid3 .slot[style*="1/1"]:nth-child(2){border-radius:var(--blob)}.grid3 .slot[style*="1/1"]:nth-child(3){border-radius:var(--petal)}
+.grid3 .ev:nth-child(odd) .slot{border-radius:26px 90px 26px 90px}.grid3 .ev:nth-child(even) .slot{border-radius:90px 26px 90px 26px}
+.ev .slot{border-radius:26px 90px 26px 90px}
 .halo{position:relative;max-width:460px;width:100%;justify-self:center;padding:26px}
-.halo::before,.halo::after{content:"";position:absolute;inset:0;border-radius:999px 999px 40px 40px;border:1px solid var(--rose);opacity:.55}
+.halo::before,.halo::after{content:"";position:absolute;inset:0;border-radius:var(--egg);border:1px solid var(--rose);opacity:.55}
 .halo::after{inset:-18px;opacity:.3;border-color:var(--gold)}
 /* hero */
 .hero{position:relative;padding:60px 0 70px;overflow:hidden;background:radial-gradient(50% 55% at 82% 28%,var(--peach),transparent 72%),radial-gradient(40% 45% at 8% 70%,var(--blush),transparent 72%)}
