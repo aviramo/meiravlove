@@ -130,6 +130,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
  .dd::after,.caret,.dd-menu::before{display:none}
  .dd>button{pointer-events:none;cursor:default;font-family:var(--sans);font-size:var(--t4);color:#e8bcbd;padding:10px 18px 0;background:none!important;box-shadow:none!important}
  .dd-menu{position:static;opacity:1;visibility:visible;transform:none;background:none;border:0;box-shadow:none;padding:0;min-width:0;display:grid;gap:0;transition:none}
+ .dd:hover .dd-menu,.dd.open .dd-menu,.dd:focus-within .dd-menu{transform:none;transition:none}
  .nav>a.cur,.dd-menu a.cur{color:var(--gold)}
  .nav>a.cur::before,.dd-menu a.cur::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-inline-end:12px;vertical-align:middle;box-shadow:0 0 0 4px rgba(194,160,98,.25)}
  .nav>a:hover{color:var(--gold)}
