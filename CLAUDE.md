@@ -9,7 +9,7 @@ Published with GitHub Pages from the `main` branch (https://aviramo.github.io/me
 
 - `build.py` generates every `.html` page from shared pieces (header + nav, footer, hero, image slots, one template for the four "space" pages). **Never edit the `.html` files by hand.** Edit `build.py`, then run `python3 build.py`, then commit the regenerated pages together with it.
 - `style.css` and `site.js` are edited directly. `build.py` adds a cache-buster derived from their content, so re-run it after changing either.
-- `images/` holds photos and the home video. Every image slot on a page is a dashed placeholder labelled with the expected file name (e.g. `images/hero-meirav.jpg`). Dropping a file with that exact name into `images/` replaces the placeholder, no code change needed. The home hero video is `images/hero-video.mp4` (optional `hero-poster.jpg`); it autoplays muted and loops.
+- `images/` holds the real photos and the home video. Every image slot on a page expects a specific file name (e.g. `images/gate-kol.jpg`); a dashed placeholder shows only while the file is missing. To replace a photo, save the new file under the same name; to add a new slot, add it in `build.py` with `slot(...)`. The home hero video is `images/hero-video.mp4` (desktop/landscape) with `hero-video-mobile.mp4` for phones, plus `hero-poster*.jpg`; it autoplays muted and loops. Keep photos light (web-sized JPG) and the videos short.
 - To check your work, screenshot with the preinstalled Chromium (Playwright) at 1280px and 390px wide, and look at the result.
 
 ## Design rules (decided with the owner, keep them)
@@ -18,7 +18,7 @@ Published with GitHub Pages from the `main` branch (https://aviramo.github.io/me
 - **Exactly four text sizes** site-wide: `--t1` (main title), `--t2` (section titles), `--t3` (sub-titles, lead), `--t4` (everything else). Do not add other `font-size` values.
 - Buttons are always horizontally centered in their block, on every page.
 - On inner pages the `h1` starts at the same height on every page, with clear space below the floating header. The small "kicker" line hangs above the `h1`.
-- The header is a floating glass capsule that shrinks smoothly on scroll; on phones the menu is a full-screen sheet that blooms from the burger button, and all spaces are listed in it. Page changes play a circle-bloom transition (curtain), handled in `site.js`.
+- The header is a floating glass capsule that shrinks smoothly on scroll. The site name and tagline use the handwritten Gveret Levin font with a drawn line-heart (no logo ring); on phones the name is centered with the burger button on the right. On phones the menu is a full-screen sheet that blooms from the burger button, and all spaces are listed in it. Page changes play a circle-bloom transition (curtain), handled in `site.js`.
 - The tagline "אהבה זה כל הסיפור" appears once per page, in the header. Don't repeat it in the page body or footer.
 - No browser-blue tap/focus box: press feedback is a small scale-down; keep the keyboard focus ring (`:focus-visible`).
 - One footer, identical on every page. Contact links live there only, not duplicated on the contact page.
@@ -36,4 +36,4 @@ Published with GitHub Pages from the `main` branch (https://aviramo.github.io/me
 
 - The contact form does not send anything yet (needs a form service connected).
 - Final text for the personal story and the privacy policy.
-- Real photos and the home video; real events with dates.
+- Real events with dates (the event cards are still samples).
