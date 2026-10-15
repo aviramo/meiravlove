@@ -151,7 +151,6 @@ pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפ�
 <p>אני מאמינה שהדרך הביתה מתחילה ברגע שבו אנחנו עוצרים להקשיב. להקשיב לגוף, ללב, לקול הפנימי ולמה שמבקש להתעורר בתוכנו. דרך קול וצלילים, תהליכי התפתחות, חיבורים בין לבבות ומפגשים שנוגעים במהות, אני יוצרת מרחבים שבהם אפשר להיזכר, להתרכך, להיפתח ולפגוש את עצמנו מחדש.</p>
 <p class="cta"><a class="btn ghost" href="story.html">להכיר את הסיפור שלי</a> <a class="btn ghost" href="events.html">להצטרף למפגש קרוב</a></p></div></section>
 <section class="sec" id="gates"><div class="wrap"><h2 class="c">ארבעת שערי העשייה</h2><div class="grid4">{cards}</div></div></section>
-<section class="quote"><div class="wrap"><p>כשהמילים נחות, הצלילים מדברים</p><small>מרחבי ריפוי, חיבור והיזכרות</small></div></section>
 <section class="sec alt"><div class="wrap two">
 {slot("mishkan-home.jpg","המרחב החדש ברעננה","4/3")}
 <div><p class="kicker">המשכן</p><h2>בית למפגש, לריפוי ולהיזכרות</h2>
