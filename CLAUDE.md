@@ -3,6 +3,8 @@
 Static Hebrew (RTL) website for Meirav Maor: spiritual guide, shamanic healer, couples coach. No server, no dependencies.
 Published with GitHub Pages from the `main` branch (https://aviramo.github.io/meiravlove/), so a push to `main` goes live within a minute or two.
 
+**Standing instruction from the owner (applies to every session): after every change, push it to `main` (not only to a work branch) so she always sees the changes live on the site. Don't wait to be asked.**
+
 **Talk to the user in Hebrew.** The owner of the site is not a developer: explain what you changed in plain language, never ask her to run commands, and do the work yourself (edit, build, check, commit, push).
 
 ## How the site is built
