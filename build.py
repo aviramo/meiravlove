@@ -115,9 +115,10 @@ pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפ�
 <video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="images/hero-video.mp4" type="video/mp4" media="(min-width: 768px), (orientation: landscape)"><source src="images/hero-video-mobile.mp4" type="video/mp4" onerror="this.closest('video').remove()"></video>
 <noscript><style>.vslot video{{opacity:1}}</style></noscript></figure>
 </section>
-<section class="intro"><div class="wrap narrow c"><p class="kicker">ברוכים הבאים הביתה</p>
+<section class="intro"><div class="wrap narrow c">
 <h1>מירב מאור</h1>
 <p class="lead">מרחבי ריפוי, חיבור והיזכרות בתדר של אהבה.</p>
+<p class="kicker">ברוכים הבאים הביתה</p>
 <p>אני מאמינה שהדרך הביתה מתחילה ברגע שבו אנחנו עוצרים להקשיב. להקשיב לגוף, ללב, לקול הפנימי ולמה שמבקש להתעורר בתוכנו. דרך קול וצלילים, תהליכי התפתחות, חיבורים בין לבבות ומפגשים שנוגעים במהות, אני יוצרת מרחבים שבהם אפשר להיזכר, להתרכך, להיפתח ולפגוש את עצמנו מחדש.</p>
 <p class="cta"><a class="btn" href="#gates">לגלות את המרחבים שלי</a> <a class="btn ghost" href="story.html">להכיר את הסיפור שלי</a> <a class="btn ghost" href="events.html">להצטרף למפגש קרוב</a></p></div></section>
 <section class="sec" id="gates"><div class="wrap"><h2 class="c">ארבעת שערי העשייה</h2><div class="grid4">{cards}</div></div></section>

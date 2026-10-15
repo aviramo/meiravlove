@@ -160,6 +160,7 @@ body:not(.home) main{padding-top:100px}
 .vhero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:56px;z-index:1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 56' preserveAspectRatio='none'%3E%3Cpath d='M0 56h1200V30C1000 -6 800 60 600 28S200 -2 0 34z' fill='%23fcf4ef'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .intro{padding:40px 0 90px;background:radial-gradient(ellipse 70% 48% at 50% 52%,rgba(243,211,195,.65),rgba(243,211,195,0) 100%)}
 .intro .cta{justify-content:center}.intro .lead{margin-bottom:1em}
+.intro .kicker{margin:1.2em 0 .5em}
 @media(max-width:1080px){:root{--hdr-h:100px}.vslot{height:clamp(480px,82svh,760px)}.intro{padding:28px 0 64px}}
 /* gates: big, bold titles. Two columns on desktop, image beside text */
 .card h3{font-family:var(--sans);font-weight:600;font-size:var(--t2);line-height:1.1;margin:0 0 .25em;color:var(--plum)}
