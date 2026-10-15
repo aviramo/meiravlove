@@ -149,7 +149,7 @@ pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפ�
 <p class="lead">מרחבי ריפוי, חיבור והיזכרות בתדר של אהבה.</p>
 <p>אני מירב מאור. מורת דרך רוחנית, אשת רפואה שמאנית ומאמנת זוגית.</p>
 <p>אני מזמינה אתכם להתחבר לעצמכם, לאנרגיית החיים שבתוככם ולאפשרות ליצור חיים מלאים באהבה, חיבור ומשמעות.</p>
-<p class="cta"><a class="btn ghost" href="story.html">להכיר את הסיפור שלי</a> <a class="btn ghost" href="events.html">להצטרף למפגש קרוב</a></p></div></section>
+<p class="cta"><a class="btn" href="#gates">בואו להכיר את המרחבים שלי</a> <a class="btn ghost" href="story.html">להכיר את הסיפור שלי</a> <a class="btn ghost" href="events.html">להצטרף למפגש קרוב</a></p></div></section>
 <section class="sec" id="gates"><div class="wrap"><h2 class="c">ארבעת שערי העשייה</h2><div class="grid4">{cards}</div></div></section>
 <section class="sec alt"><div class="wrap two">
 {slot("mishkan-home.jpg","המרחב החדש ברעננה","4/3")}
