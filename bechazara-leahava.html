@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@400;500&family=Amatic+SC:wght@400;700&family=Gveret+Levin&family=Assistant:wght@300;400;600&display=swap">
 <script>try{var p=sessionStorage.getItem('pt');if(p){sessionStorage.removeItem('pt');var a=p.split(',');var d=document.documentElement;d.classList.add('pt-in');d.style.setProperty('--px',a[0]+'px');d.style.setProperty('--py',a[1]+'px')}}catch(e){}</script>
-<link rel="stylesheet" href="style.css?v=23908f59">
+<link rel="stylesheet" href="style.css?v=3e2e0e51">
 </head>
 <body class="">
 <header class="hdr"><div class="wrap hdr-in">
@@ -34,6 +34,9 @@
 <div><h2>על המרחב</h2><p>מרחב לזוגות המבקשים להעמיק את הקשר, לפתח תקשורת מיטיבה, לחזק אינטימיות ולבנות מערכת יחסים שיש בה יותר הקשבה, בחירה וקרבה.</p><h3>מה כולל המרחב</h3><ul class='ticks'><li>ליווי ואימון זוגי</li><li>תקשורת והקשבה בתוך קשר</li><li>זיהוי דפוסים שמרחיקים בין בני זוג</li><li>חיזוק הקרבה והאינטימיות</li><li>תהליכים וסדנאות לזוגות</li><li>כלים מעשיים להתנהלות זוגית מיטיבה</li></ul><p class="muted">הפנייה דיסקרטית, ואפשר לתאם שיחת היכרות דרך <a href="contact.html">טופס יצירת הקשר</a>.</p></div>
 <figure class="slot " style="--ratio:4/5"><div class="slot-ph"><span class="slot-ico">▢</span><b>תמונה</b><small>images/bechazara-1.jpg</small></div><img src="images/bechazara-1.jpg" alt="תמונה" loading="lazy" onerror="this.remove()"></figure>
 </div></section>
+<section class="sec reg" id="register"><div class="wrap narrow c"><h2>הרשמה למרחב</h2>
+<p>רוצים להצטרף? אפשר להירשם ולשלם כאן, בכמה צעדים קצרים.</p>
+<p class="cta"><button class="btn" type="button" data-reg="בחזרה לאהבה" data-opts="[{&quot;label&quot;: &quot;[שם האפשרות]&quot;, &quot;price&quot;: &quot;&quot;, &quot;url&quot;: &quot;&quot;}]">להרשמה</button></p></div></section>
 <section class="sec alt"><div class="wrap"><h2>גלריה</h2>
 <div class="grid3"><figure class="slot " style="--ratio:1/1"><div class="slot-ph"><span class="slot-ico">▢</span><b>תמונה</b><small>images/bechazara-2.jpg</small></div><img src="images/bechazara-2.jpg" alt="תמונה" loading="lazy" onerror="this.remove()"></figure><figure class="slot " style="--ratio:1/1"><div class="slot-ph"><span class="slot-ico">▢</span><b>תמונה</b><small>images/bechazara-3.jpg</small></div><img src="images/bechazara-3.jpg" alt="תמונה" loading="lazy" onerror="this.remove()"></figure><figure class="slot " style="--ratio:1/1"><div class="slot-ph"><span class="slot-ico">▢</span><b>תמונה</b><small>images/bechazara-4.jpg</small></div><img src="images/bechazara-4.jpg" alt="תמונה" loading="lazy" onerror="this.remove()"></figure></div>
 <p class="muted">מקום לתמונות ולסרטונים מהמפגשים. תמונות משתתפים יפורסמו רק בהסכמתם.</p></div></section>
@@ -52,6 +55,18 @@
 <nav aria-label="האתר"><h4>האתר</h4><a href="index.html">דף הבית</a><a href="story.html">הסיפור שלי</a><a href="mishkan.html">המשכן</a><a href="events.html">אירועים ומפגשים</a><a href="contact.html">יצירת קשר</a></nav>
 <nav aria-label="המרחבים"><h4>המרחבים</h4><a href="kol-hanshama.html">קול הנשמה</a><a href="derech-haahava.html">דרך האהבה</a><a href="bechazara-leahava.html">בחזרה לאהבה</a><a href="veahavat-lach.html">ואהבת לך</a></nav>
 </div><div class="wrap ftr-bot"><span>כל הזכויות שמורות למירב מאור</span><a href="privacy.html">מדיניות פרטיות</a></div></footer>
-<script src="site.js?v=23908f59"></script>
+<dialog class="regdlg" id="regdlg"><form class="form" method="dialog" id="reg-form">
+<button type="button" class="regx" aria-label="סגירה">×</button>
+<h3 id="reg-title">הרשמה</h3>
+<label>אפשרות הרשמה<select name="opt" required></select></label>
+<p class="reg-price" aria-live="polite"></p>
+<label>שם מלא<input name="name" required autocomplete="name"></label>
+<label>טלפון<input name="phone" type="tel" required autocomplete="tel" dir="ltr"></label>
+<label>אימייל<input name="email" type="email" required autocomplete="email" dir="ltr"></label>
+<label class="chk"><input type="checkbox" required> קראתי ואני מסכימ/ה ל<a href="privacy.html">מדיניות הפרטיות</a></label>
+<button class="btn" type="submit">המשך לתשלום</button>
+<p class="form-msg" role="status"></p>
+</form></dialog>
+<script src="site.js?v=3e2e0e51"></script>
 </body>
 </html>

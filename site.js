@@ -102,6 +102,29 @@ if (form) form.addEventListener('submit', e => {
   e.preventDefault();
   form.querySelector('.form-msg').textContent = 'תודה! (הטופס עדיין לא מחובר לשליחה. יש לחבר שירות טפסים לפני העלייה לאוויר.)';
 });
+// Per-space registration: button opens a form, then sends to that option's payment page
+const dlg = document.getElementById('regdlg');
+if (dlg) {
+  const f = document.getElementById('reg-form'), sel = f.opt, price = f.querySelector('.reg-price'), msg = f.querySelector('.form-msg');
+  let opts = [];
+  const showPrice = () => { const o = opts[sel.selectedIndex]; price.textContent = o && o.price ? 'סכום לתשלום: ' + o.price : ''; };
+  document.querySelectorAll('[data-reg]').forEach(b => b.addEventListener('click', () => {
+    opts = JSON.parse(b.dataset.opts);
+    document.getElementById('reg-title').textContent = 'הרשמה: ' + b.dataset.reg;
+    sel.innerHTML = ''; opts.forEach(o => sel.add(new Option(o.label, o.label)));
+    msg.textContent = ''; showPrice();
+    dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', '');
+  }));
+  sel.addEventListener('change', showPrice);
+  dlg.querySelector('.regx').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const o = opts[sel.selectedIndex];
+    if (o && o.url) location.href = o.url;
+    else msg.textContent = 'ההרשמה תיפתח בקרוב. אפשר לפנות אלינו דרך הוואטסאפ למטה.';
+  });
+}
 // Ambient video: silent, seamless loop (landscape triptych on wide screens, portrait cut on phones)
 const vid = document.querySelector('.vslot video');
 if (vid) {

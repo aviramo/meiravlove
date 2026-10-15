@@ -250,3 +250,9 @@ summary:active{color:var(--rose-d)}
 
 /* phones: the logo is centred with translate(-50%,-50%); the press effect must keep that translate */
 @media(max-width:1080px){.logo:active{transform:translate(-50%,-50%) scale(calc((1 - var(--p,0)*.25)*.96))}}
+
+.regdlg{margin:auto;max-height:92vh;overflow:auto;border:0;border-radius:28px;padding:30px 26px;width:min(480px,92vw);background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(74,26,56,.35)}
+.regdlg::backdrop{background:rgba(74,26,56,.55);backdrop-filter:blur(4px)}
+.regdlg h3{margin:0 0 .2em;text-align:center}.regdlg .btn{justify-self:center}
+.regx{position:absolute;top:12px;left:16px;border:0;background:none;font:inherit;font-size:var(--t3);line-height:1;color:var(--plum);cursor:pointer}
+.reg-price{color:var(--rose-d);font-weight:400;margin:0}

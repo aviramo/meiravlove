@@ -69,6 +69,18 @@ def page(fn, title, desc, body, active):
 <nav aria-label="האתר"><h4>האתר</h4><a href="index.html">דף הבית</a><a href="story.html">הסיפור שלי</a><a href="mishkan.html">המשכן</a><a href="events.html">אירועים ומפגשים</a><a href="contact.html">יצירת קשר</a></nav>
 <nav aria-label="המרחבים"><h4>המרחבים</h4><a href="kol-hanshama.html">קול הנשמה</a><a href="derech-haahava.html">דרך האהבה</a><a href="bechazara-leahava.html">בחזרה לאהבה</a><a href="veahavat-lach.html">ואהבת לך</a></nav>
 </div><div class="wrap ftr-bot"><span>כל הזכויות שמורות למירב מאור</span><a href="privacy.html">מדיניות פרטיות</a></div></footer>
+<dialog class="regdlg" id="regdlg"><form class="form" method="dialog" id="reg-form">
+<button type="button" class="regx" aria-label="סגירה">×</button>
+<h3 id="reg-title">הרשמה</h3>
+<label>אפשרות הרשמה<select name="opt" required></select></label>
+<p class="reg-price" aria-live="polite"></p>
+<label>שם מלא<input name="name" required autocomplete="name"></label>
+<label>טלפון<input name="phone" type="tel" required autocomplete="tel" dir="ltr"></label>
+<label>אימייל<input name="email" type="email" required autocomplete="email" dir="ltr"></label>
+<label class="chk"><input type="checkbox" required> קראתי ואני מסכימ/ה ל<a href="privacy.html">מדיניות הפרטיות</a></label>
+<button class="btn" type="submit">המשך לתשלום</button>
+<p class="form-msg" role="status"></p>
+</form></dialog>
 <script src="site.js?v={VER}"></script>
 </body>
 </html>
@@ -83,12 +95,29 @@ def hero(h1, sub, imgname, imglabel, kicker=""):
 
 def bullets(items): return "<ul class='ticks'>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
 
+# ---------------- REGISTRATION (per space) ----------------
+# Each space has its own sign-up options and price. Fill "url" with the payment page link from the payment service
+# (clearing provider). Until a url is set, the form shows "registration opens soon". Never invent prices.
+import json, html as _html
+REG = {
+ "קול הנשמה":     [{"label": "[שם האפשרות]", "price": "", "url": ""}],
+ "דרך האהבה":     [{"label": "[שם האפשרות]", "price": "", "url": ""}],
+ "בחזרה לאהבה":   [{"label": "[שם האפשרות]", "price": "", "url": ""}],
+ "ואהבת לך":      [{"label": "[שם האפשרות]", "price": "", "url": ""}],
+}
+def reg_block(name):
+    opts = json.dumps(REG[name], ensure_ascii=False)
+    return f'''<section class="sec reg" id="register"><div class="wrap narrow c"><h2>הרשמה למרחב</h2>
+<p>רוצים להצטרף? אפשר להירשם ולשלם כאן, בכמה צעדים קצרים.</p>
+<p class="cta"><button class="btn" type="button" data-reg="{_html.escape(name)}" data-opts="{_html.escape(opts)}">להרשמה</button></p></div></section>'''
+
 def space_page(fn, name, tagline, intro, items, heading, extra, imgs, note=""):
     body = hero(name, f"{tagline}", imgs[0][0], imgs[0][1], "מרחב")
     body += f'''<section class="sec"><div class="wrap two">
 <div><h2>על המרחב</h2><p>{intro}</p><h3>{heading}</h3>{bullets(items)}{extra}</div>
 {slot(imgs[1][0], imgs[1][1], "4/5")}
 </div></section>
+{reg_block(name)}
 <section class="sec alt"><div class="wrap"><h2>גלריה</h2>
 <div class="grid3">{slot(imgs[2][0], imgs[2][1], "1/1")}{slot(imgs[3][0], imgs[3][1], "1/1")}{slot(imgs[4][0], imgs[4][1], "1/1")}</div>
 <p class="muted">מקום לתמונות ולסרטונים מהמפגשים. תמונות משתתפים יפורסמו רק בהסכמתם.</p></div></section>
