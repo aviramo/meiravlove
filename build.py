@@ -49,7 +49,7 @@ def page(fn, title, desc, body, active):
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@400;500&family=Amatic+SC:wght@400;700&family=Gveret+Levin&family=Assistant:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Frank+Ruhl+Libre:wght@400;500;700&family=Amatic+SC:wght@400;700&family=Gveret+Levin&family=Assistant:wght@300;400;500;600;700&display=swap">
 <script>try{{var p=sessionStorage.getItem('pt');if(p){{sessionStorage.removeItem('pt');var a=p.split(',');var d=document.documentElement;d.classList.add('pt-in');d.style.setProperty('--px',a[0]+'px');d.style.setProperty('--py',a[1]+'px')}}}}catch(e){{}}</script>
 <link rel="stylesheet" href="style.css?v={VER}">
 </head>
