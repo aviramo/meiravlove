@@ -16,12 +16,12 @@ Published with GitHub Pages from the `main` branch (https://aviramo.github.io/me
 
 ## Design rules (decided with the owner, keep them)
 
-- Look: soft and feminine (blush, rose, plum, gold), arches/rings/waves. Image frames use varied organic shapes (egg, petal, blob, capsule, circle); never the same silhouette twice in a row and no flat bottoms.
+- Look: warm and grounded, colors white, red, brown and gold (changed by the owner Nov 2026; was blush/rose/plum), arches/rings/waves. Image frames use varied organic shapes (egg, petal, blob, capsule, circle); never the same silhouette twice in a row and no flat bottoms.
 - **Exactly four text sizes** site-wide: `--t1` (main title), `--t2` (section titles), `--t3` (sub-titles, lead), `--t4` (everything else). Do not add other `font-size` values.
 - Buttons are always horizontally centered in their block, on every page.
 - On inner pages the `h1` starts at the same height on every page, with clear space below the floating header. The small "kicker" line hangs above the `h1`.
 - The header is a floating glass capsule that shrinks smoothly on scroll. The site name and tagline use the handwritten Gveret Levin font with a drawn line-heart (no logo ring); on phones the name is centered with the burger button on the right. On phones the menu is a full-screen sheet that blooms from the burger button, and all spaces are listed in it. Page changes play a circle-bloom transition (curtain), handled in `site.js`.
-- The tagline "אהבה זה כל הסיפור" appears once per page, in the header. Don't repeat it in the page body or footer.
+- The tagline "אהבה זה כל הסיפור" appears once per page, in the header. Exception: on the home page the owner asked for it under the h1 as well. Don't repeat it anywhere else.
 - No browser-blue tap/focus box: press feedback is a small scale-down; keep the keyboard focus ring (`:focus-visible`).
 - One footer, identical on every page. Contact links live there only, not duplicated on the contact page.
 - Respect `prefers-reduced-motion`.
