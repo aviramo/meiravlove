@@ -255,3 +255,6 @@ summary:active{color:var(--rose-d)}
 .regdlg h3{margin:0 0 .2em;text-align:center}.regdlg .btn{justify-self:center}
 .regx{position:absolute;top:12px;left:16px;border:0;background:none;font:inherit;font-size:var(--t3);line-height:1;color:var(--plum);cursor:pointer}
 .reg-price{color:var(--rose-d);font-weight:400;margin:0}
+
+.home-tag{font-family:var(--hand);font-weight:700;font-size:var(--t3);color:var(--rose-d);line-height:1.2;margin:.1em 0 .6em}
+.home-close{font-family:var(--hand);font-weight:700;font-size:var(--t3);color:var(--plum);line-height:1.5;margin:1.2em 0 1em}
