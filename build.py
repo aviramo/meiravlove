@@ -133,11 +133,18 @@ def space_page(fn, name, tagline, intro, items, heading, extra, imgs, note=""):
 pages = {}
 
 # ---------------- HOME ----------------
-gates = [("kol-hanshama.html","קול הנשמה","מרחב של צלילים מרפאים, מעגלי שירה, עבודה קולית והקשבה פנימית.","gate-kol.jpg","צלילים וכלי נגינה"),
- ("derech-haahava.html","דרך האהבה","מרחב לפנויים ולפנויות המבקשים להכיר, להתחבר, להתפתח וליצור קשרים אמיתיים.","gate-derech.jpg","מפגש היכרות"),
- ("bechazara-leahava.html","בחזרה לאהבה","מרחב לזוגות המבקשים להתקרב, לפתוח את הלב ולבנות תקשורת ואינטימיות מיטיבות.","gate-bechazara.jpg","זוגיות וחיבור"),
- ("veahavat-lach.html","ואהבת לך","מסע נשי של היזכרות, התעוררות ובחירה.","gate-veahavat.jpg","מסע נשי")]
-cards = "".join(f'<a class="card" href="{h}">{slot(img, lab, "4/5")}<h3>{n}</h3><p>{d}</p><span class="more">להיכנס למרחב ←</span></a>' for h,n,d,img,lab in gates)
+gates = [("kol-hanshama.html","קול הנשמה","מרחבי ריפוי, צלילים מרפאים, שירה שמאנית, רייקי ורפואות שמאניות.","gate-kol.jpg","צלילים וכלי נגינה"),
+ ("","ליווי והכוונה רוחנית","תהליכי התעוררות, שינוי תודעתי, השתחררות מדפוסים ובחירה בדרך חדשה.","gate-livui.jpg","ליווי רוחני"),
+ ("veahavat-lach.html","ואהבת לך","מסע ההיזכרות של הנשמה. הספר שלך.","gate-veahavat.jpg","מסע הנשמה"),
+ ("","הביתה אל האישה שאת","מסע ההיזכרות של הנקבה.","gate-haisha.jpg","מסע נשי"),
+ ("bechazara-leahava.html","בחזרה לאהבה","ליווי ואימון זוגי, חיבור מחודש ואהבה בזוגיות.","gate-bechazara.jpg","זוגיות וחיבור"),
+ ("derech-haahava.html","דרך האהבה","היכרויות, חיבורים ויצירת זוגיות.","gate-derech.jpg","מפגש היכרות"),
+ ("","ALOHA","קהילת אלוהה 🌺<br>רוח • אהבה • חיבורים.","gate-aloha.jpg","קהילת אלוהה")]
+def gate_card(h,n,d,img,lab):
+    if h:
+        return f'<a class="card" href="{h}">{slot(img, lab, "4/5")}<h3>{n}</h3><p>{d}</p><span class="more">להיכנס למרחב ←</span></a>'
+    return f'<div class="card">{slot(img, lab, "4/5")}<h3>{n}</h3><p>{d}</p></div>'
+cards = "".join(gate_card(*g) for g in gates)
 pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפוי, חיבור והיזכרות בתדר של אהבה. הבית הדיגיטלי של מירב מאור.", "index.html", f'''
 <section class="vhero">
 <figure class="vslot">
@@ -154,7 +161,7 @@ pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפ�
 <p>בעבודתי אני משלבת חוכמה שמאנית עתיקה, ידע רוחני ותודעתי, צלילים מרפאים, קול ותנועה, לצד ליווי אישי וזוגי, ויוצרת מרחבים המאפשרים להשתחרר מהמוכר, להתחבר לעצמנו ולהיזכר במהות האמיתית שלנו.</p>
 <p class="home-close">הדרך היא להיזכר. הבחירה היא שלנו.<br>בתדר של אהבה. 🤍</p>
 <p class="cta"><a class="btn" href="#gates">בואו להכיר את המרחבים שלי</a> <a class="btn ghost" href="story.html">להכיר את הסיפור שלי</a></p></div></section>
-<section class="sec" id="gates"><div class="wrap"><h2 class="c">ארבעת שערי העשייה</h2><div class="grid4">{cards}</div></div></section>
+<section class="sec" id="gates"><div class="wrap"><h2 class="c">העולמות של העשייה שלי</h2><p class="lead c gates-sub">אלה העולמות שמרכיבים את העשייה שלי</p><div class="grid4">{cards}</div></div></section>
 <section class="sec alt"><div class="wrap two">
 {slot("mishkan-home.jpg","המרחב החדש ברעננה","4/3")}
 <div><p class="kicker">המשכן</p><h2>בית למפגש, לריפוי ולהיזכרות</h2>
