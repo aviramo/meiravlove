@@ -258,9 +258,9 @@ summary:active{color:var(--rose-d)}
 
 
 /* home intro: warm, clean, easy to read */
-.intro .kicker{font-family:var(--serif);font-weight:500;color:var(--rose-d);letter-spacing:.02em;line-height:1.3}
+.intro .kicker{font-family:Rubik,var(--sans);font-weight:600;color:var(--rose-d);letter-spacing:0;line-height:1.3;margin-bottom:.35em}
 .intro h1{color:var(--plum);font-weight:500}
-.home-tag{font-family:var(--serif);font-weight:500;font-size:var(--t3);color:var(--rose-d);line-height:1.3;margin:.2em 0 .2em}
+.home-tag{font-family:Rubik,var(--sans);font-weight:600;font-size:var(--t3);color:var(--rose-d);line-height:1.3;margin:.25em 0 .3em}
 .intro .lead{color:var(--plum);margin:.2em 0 .4em}
 .intro .lead::after{content:"";display:block;width:64px;height:2px;margin:.7em auto 0;background:var(--gold);border-radius:2px}
 .intro p:not([class]){color:var(--ink);line-height:1.9;max-width:34em;margin:0 auto 1em}
