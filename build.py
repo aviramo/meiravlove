@@ -151,10 +151,9 @@ pages["index.html"] = ("ברוכים הבאים הביתה", "מרחבי ריפ�
 <video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="images/hero-video.mp4" type="video/mp4" media="(min-width: 768px), (orientation: landscape)"><source src="images/hero-video-mobile.mp4" type="video/mp4" onerror="this.closest('video').remove()"></video>
 <noscript><style>.vslot video{{opacity:1}}</style></noscript></figure>
 </section>
-<section class="intro"><div class="wrap narrow c"><p class="kicker">ברוכים הבאים הביתה</p>
-<h1>מירב מאור</h1>
-<p class="home-tag">אהבה זה כל הסיפור ❤️</p>
-<p class="lead">מרחבי התעוררות, ריפוי, חיבור והיזכרות.</p>
+<section class="intro"><div class="wrap narrow c"><h1>מירב מאור</h1>
+<p class="lead">מרחבי ריפוי, חיבור והיזכרות בתדר של אהבה</p>
+<p class="home-tag">ברוכים הבאים הביתה</p>
 <p>מתחת לכל התפקידים, האמונות והסיפורים שאספנו בדרך, נמצאת המהות האמיתית שלנו.</p>
 <p>לצאת מהאוטומט, להשתחרר מתבניות ישנות, להרחיב את התודעה ולבחור בחיים מתוך חופש, מודעות ואהבה.</p>
 <p>אני מירב מאור, אשת רפואה שמאנית, מורת דרך רוחנית ומאמנת זוגית.</p>
